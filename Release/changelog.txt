@@ -1,0 +1,226 @@
+The SWTSwing project - SWT running on Swing
+http://swtswing.sourceforge.net
+Christopher Deckers (chrriis@nextencia.net)
+Licence terms: EPL 1.0 (see licence.html)
+
+---------------------------------- Change log ----------------------------------
+
+* Version 3.2.0006 (xxxxxxxxxxxxxxx):
+
+- Group font can now be set.
+- Coordinate mapping from Display class now considers parent offsets properly.
+- DragSource now uses the mouse-related component of the hierarchy to hook DnD.
+- Fix in the StyledText widget generating stack overflow.
+- Regression: hovering the tray item was generating exceptions.
+- General speed for monitor properties is improved.
+- Display bounds are fixed for multiple monitors.
+- Synchronisation execution was done in a wrong place. 
+- System images are taken from the Metal L&F when the system L&F returns null.
+
+
+* Version 3.2.0005 (August 20, 2007):
+
+- Sash is improved when not using the SMOOTH style.
+- Tracker is partially implemented.
+- Path should now be able to return its PathData.
+- Browser location events are implemented.
+- When possible, SWTSwing is compatible with Java 1.4 and Java 5.0.
+- Improvements to the compatibility with Linux.
+- GC is reviewed to simplify the code and improve performance.
+- Printing is implemented using recording.
+- Tree API is better covered.
+- A child Shell is shown on the same monitor as the parent (visible hack though)
+- Radio exclusions in Composite and ToolBar is improved.
+- Radio button group navigation with keyboard is implemented.
+- Drag and drop is improved.
+- Table sorting is implemented.
+- Table packing is improved.
+- Flags handling in GC.drawText(...) is improved.
+- The system font works better accross look and feels now.
+- Text Modify event is posted to avoid conccurent modifications.
+- Key events should be fixed.
+- Link implementation is improved.
+- Labels now handle their foreground/background/font correctly.
+- Fixed incorrect font styles returned from the font chooser.
+- User calls that affect the selection don't trigger the event on a Table.
+- Exception propagation is in place, including VM shutdown if no user threads.
+- Guard against exceptions/errors in the event loop.
+- Some conditions for range checking were wrong in List. This is fixed.
+- Focus handling is improved.
+- HTML quality rendering is improved.
+- Text field with multiple lines has now the same style as a single-line one.
+- Link style is like a label now.
+- Background/foreground/font/cursor handling is rewritten.
+- Improved style bits for table and tree.
+- Spinner selection events are implemented.
+- Background inheritance is improved.
+- Expand bar has an appropriate preferred size.
+- Combo should now get/set the text of the selected item properly.
+- The font chooser is improved.
+- The size and style of the default font of the font chooser are now correct.
+- Selection events on the arrow of a drop down button are not sent twice anymore.
+- The arrow button now relies on the arrow button of the scroll bar for a better rendering.
+- Checkboxes and radio buttons have a smaller margin.
+- Preferred tab folder size is improved.
+- Tab folders now return properly its children.
+- TableItem now return the proper check state.
+- Spinner events are generated.
+- Various widget styles are implemented.
+- Image handling is much improved.
+- Inserting columns in a table set the order properly.
+- Mouse location and item bounds are now correct on a table with scroll pane.
+- A Border is shown for a tool shell with trimming.
+- Stroke attributes in GC were not always used.
+- GC painting to a frame when it opens does not get overwritten by some paint events.
+- A file can now be launched.
+- Right mouse click selects the table row if it is not selected.
+- Right mouse click selects the tree node if it is not selected.
+- Multiple clicks on the same tree node triggers new selection events.
+- Table check box selection is implemented.
+- Scroll bar visibility now affect the parent scrollpane policies.
+- Table items were not removed properly when removing a range.
+- Table items can now be cleared.
+- Few fixes to the key filtering.
+- Pressing enter on a combo validates the default button.
+- Scroll increments are set properly on scroll bars.
+- Table background is improved.
+- Adjustments to default gradient colors.
+- Table selection events are added.
+- Mouse Wheel events are forwarded properly to ancestors.
+- Focus improvements when shells are opening.
+- More of the tab traversal functionality is implemented.
+- Coolbar content's height is improved for some buggy cases.
+- StyledText visual bug is fixed.
+- Some internal UI threading code is moved out of Display to its own util class.
+- Updating the text of a Group now repaints to show the change.
+- Deferred configuration of Tree's scrollpane is immediate to fix header issues.
+- SWTSwing package is added: SWT in Swing and Swing in SWT APIs are implemented.
+- Table background is now set correctly.
+- Resizable Shells with no title now show a border and are resizable.
+- Modality is improved and does not block the UI thread anymore.
+- Always on top for shells is added.
+- The state mask of key events is fixed when modifiers are pressed.
+- Ctrl+Shift+<char> now sets the keycode correctly.
+- Setting the selection in a Tree repaints it to actually see the change.
+- Tool items are not focusable.
+- Group does not show the '&' when there is a mnemonic.
+- GC: getting the line dash now returns null when there are no dashes.
+- Altering minimize/maximize state now returns to expected state.
+- Arc drawing is corrected.
+- Caret stops blinking when the parent component is not the focus owner.
+- Balloon tooltip for tray item is implemented, with the limits of the JDK.
+- Setting multiple images for a frame is supported.
+- System tray is implemented.
+- Java 6 is now officially taken into use for some long awaited features.
+- Window focus is adjusted.
+- List is now focusable and re-routes the focus handling to the Swing component.
+- A menu bar is not assumed to only contain SWTSwing components anymore.
+- List.getItemHeight() is implemented.
+- Arrow button has no margins.
+- Preferred size of component is modified.
+- Display.map methods are fixed.
+- Selected item in a tree has appropriate foreground and background colors.
+- Locations of controls in a Table are corrected.
+- Gradient for title is adjusted.
+- Bug affecting the row count of a Table is fixed.
+- Apple menu bar system property is on by default.
+
+
+* Version 3.2.0004 (October 2, 2006):
+
+- Modifiers are not repeated when key is stuck.
+- Tree and table focus and enabling requests are rerouted to appropriate components.
+- Modal dialogs don't generate an exception anymore.
+- File Transfer is implemented.
+- Text position for check tool items is not below anymore but on the same line.
+- Selection event is sent for check box tool items.
+- Selection event is sent for check box menu items.
+- Fixes to the Coolbar.
+- Default selection for Tree is added.
+- Layout is reviewed with some forced events to comply with expected behaviour.
+- CTRL+SHIFT+F2 debugging facility that dumps control tree is added.
+- Dialogs are non focusable now.
+- A tree to which children are added at expansion time does expand.
+- A composite with multiple children does not flash anymore.
+- Setting a null background image does not throw an exception.
+- More GC enhancements.
+- Few improvements to the image handling.
+- The look of Toolbar drop-down buttons is reviewed to work across L&Fs.
+- Printing is now a stub, instead of the win32 version.
+- Only 3 cursors use custom images now, the others now use one that resembles.
+- Item removal in Tree is fixed.
+- Mnemonics are fixed for tab items.
+- Null images can be set on tree items, tree columns and table columns.
+- Display's mapping method for rectangle is fixed.
+- Toolbar's height is constrained to its preferred value.
+- Graphic context coordinates are adjusted.
+- Table headers for Tree do not show anymore on some look and feels.
+- The tree widget is mostly implemented.
+- The Table listener for component events is corrected to be the container.
+- Non-ASCII characters are defined using their unicode value.
+- The class cast when closing a dialog in fake dispatch mode seems to be fixed.
+- JCoolBar.isLocked() does not call itself anymore.
+
+
+* Version 3.2.0003 (September 15, 2006):
+
+- SystemSelection clipboard does not throw NPE if not supported.
+- Display does not tell to sleep if it is disposed.
+- Addition of "swt.swing.lightpopups" to enable lightweight popups.
+- Client area omited some insets, which is now fixed.
+- Table's VIRTUAL style is mostly supported.
+- The "swt.swing.laf.decorated" can force L&F decorations with "true"/"false".
+- Default combo box size is fixed.
+- Label wrapping is fixed.
+- Combo and List selection events are not sent when initiated programmaticaly.
+- Multi line messages are now supported in the MessageBox.
+- Color dialog is now working as expected.
+- Fixed an application freeze when closing a dialog in real dispatching mode.
+- Duplicate monitors are filtered out when getting the monitors.
+- The client areas of the monitors are now correct.
+- Setting an icon on a radio button does not remove the radio icon.
+- null text is never returned for a Label.
+- null text is never returned for a Button.
+- Some timers are removed to restore original performance.
+- Background and foreground are supported for Text.
+- Font chooser is implemented.
+- More methods are implemented for the Table and Tree widget.
+- Table header visibility and height are now working as expected.
+- Shells are forced to paint when they are shown to fix splashscreen issues.
+- Basic Table event handling is added.
+- Traversal keys general implementation is in place.
+
+
+* Version 3.2.0002 (September 4, 2006):
+
+- Code compiles without errors. Not implemented areas are marked as such.
+- Drop down tool item with text and icon are now layed out correctly.
+- Addition of a script to get and build the sources from the CVS repositories.
+- Wrapping is now honored in multi line Text widget.
+- Word wraps in MessageBox after a maximum predefined length.
+- Vertical style for ToolBar is honored.
+- Selection event is now sent upon selection of a combo item.
+- Fixed a problem when some events were sent and the tree was empty.
+- Table's removeXXX() methods are implemented.
+- Some fixes to the clipping of the GC.
+- syncExec() and asyncExec() were flawed and should be fixed now.
+- The TabFolder Selection event now sets the item the event structure.
+- Multi file extensions in a single filter is now supported.
+- Image bug related with transparency is fixed.
+- Preferred width of a wrapping label is fixed.
+- Preferred width of a list is fixed.
+- Browser widget is added using the really-limited JEditorPane class.
+- Border style is now supported for scale.
+- SnippetLauncher now offers a filter box.
+- Combo box size is constrained in height.
+- Border style for scale is supported.
+- ExpandBar background is changed to respect desktop color.
+- Label alignment is fixed.
+
+
+* Version 3.2.0001 (August 18, 2006):
+
+- Complete reimplementation from scratch.
+- Threading and deadlock issues from the original implementation are resolved.
+- The widget set is almost complete but some of the methods or event handling
+are still missing.
